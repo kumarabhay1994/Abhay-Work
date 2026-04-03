@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abhay Kumar — Data &amp; Business Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blue: #e94560;
+  --blue-light: #2e75b6;
+  --accent: #c8a96e;
+  --white: #ffffff;
+  --off-white: #f8f6f2;
+  --gray-100: #f1eff9;
+  --gray-200: #e2e0dc;
+  --gray-400: #9a9690;
+  --gray-700: #4a4744;
+  --text: #1a1816;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); line-height: 1.7; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--navy);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 48px; height: 60px;
+  border-bottom: 1px solid rgba(200,169,110,0.2);
+}
+.nav-brand { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--accent); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+.hero { background: var(--navy); padding: 130px 48px 80px; }
+.hero-inner { max-width: 900px; margin: 0 auto; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(200,169,110,0.4); padding: 6px 16px; border-radius: 2px; margin-bottom: 24px; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 64px; color: var(--white); line-height: 1.1; margin-bottom: 8px; }
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero-roles { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 24px; }
+.role-badge { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); padding: 6px 16px; border-radius: 2px; }
+.hero-summary { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.8; margin-bottom: 36px; }
+.hero-stats { display: flex; gap: 40px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
+.stat-val { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--accent); line-height: 1; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.hero-contact { display: flex; gap: 20px; flex-wrap: wrap; }
+.contact-item { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+section { padding: 72px 48px; }
+.section-inner { max-width: 900px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 6px; }
+.section-title { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--navy); margin-bottom: 40px; }
+.section-title span { color: var(--blue-light); }
+
+.exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--gray-200); }
+.exp-item:last-child { border-bottom: none; }
+.exp-company { font-weight: 600; font-size: 13px; color: var(--navy); margin-bottom: 3px; }
+.exp-dates { font-size: 12px; color: var(--gray-400); margin-bottom: 4px; }
+.exp-loc { font-size: 12px; color: var(--gray-400); }
+.exp-current { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1D9E75; background: #E1F5EE; padding: 3px 8px; border-radius: 2px; margin-top: 8px; }
+.exp-title { font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--navy); margin-bottom: 14px; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.exp-bullets li { font-size: 13px; color: var(--gray-700); line-height: 1.65; padding-left: 14px; position: relative; }
+.exp-bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+.dash-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 6px; overflow: hidden; margin-bottom: 28px; }
+.dash-card:last-child { margin-bottom: 0; }
+.dash-info { padding: 24px 28px 18px; }
+.dash-org { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.dash-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px; }
+.dash-desc { font-size: 13px; color: var(--gray-700); line-height: 1.7; margin-bottom: 14px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11px; font-weight: 500; color: var(--blue); background: #E6F1FB; padding: 3px 10px; border-radius: 2px; }
+.dash-img-wrap { padding: 0 28px 28px; }
+.dash-img { width: 100%; display: block; border-radius: 4px; border: 1px solid var(--gray-200); }
+
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.proj-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; padding: 24px; transition: border-color 0.2s, transform 0.2s; }
+.proj-card:hover { border-color: var(--blue-light); transform: translateY(-2px); }
+.proj-org { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.proj-name { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.proj-desc { font-size: 13px; color: var(--gray-700); line-height: 1.65; margin-bottom: 14px; }
+
+.skills-section { background: var(--navy); }
+.skills-section .section-title { color: var(--white); }
+.skills-section .section-label { color: var(--accent); }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.skill-group { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 22px; }
+.skill-group-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-pill { font-size: 12px; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 4px 11px; border-radius: 2px; }
+
+.certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.cert-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; padding: 22px; }
+.cert-issuer { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 7px; }
+.cert-name { font-size: 14px; font-weight: 500; color: var(--navy); line-height: 1.4; margin-bottom: 7px; }
+.cert-date { font-size: 12px; color: var(--gray-400); }
+
+.contact-section { background: var(--navy); text-align: center; }
+.contact-section .section-label { color: var(--accent); }
+.contact-section .section-title { color: var(--white); margin-bottom: 12px; }
+.contact-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 36px; }
+.contact-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.contact-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,169,110,0.2); border-radius: 4px; padding: 18px 24px; min-width: 170px; }
+.contact-type { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.contact-val { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+footer { background: #090e18; text-align: center; padding: 18px; font-size: 12px; color: rgba(255,255,255,0.25); }
+
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 56px; }
+  .hero h1 { font-size: 40px; }
+  section { padding: 56px 20px; }
+  .exp-item { grid-template-columns: 1fr; gap: 10px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-brand">Abhay Kumar</div>
+<div class="nav-links">
+<a href="#experience">Experience</a>
+<a href="#dashboards">Dashboards</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+<div class="hero">
+<div class="hero-inner">
+<div class="hero-tag">Open to Opportunities</div>
+<h1>Abhay <em>Kumar</em></h1>
+<div class="hero-roles">
+<span class="role-badge">Data Analyst</span>
+<span class="role-badge">Business Analyst</span>
+<span class="role-badge">Data Operations</span>
+</div>
+<p class="hero-summary">7+ years turning complex data into clear business decisions. From Ministry of Culture KPI dashboards to AWS cost optimisation and wildlife conservation analytics — I bridge the gap between raw data and real outcomes.</p>
+<div class="hero-stats">
+<div><div class="stat-val">6+</div><div class="stat-label">Years Experience</div></div>
+<div><div class="stat-val">10+</div><div class="stat-label">KPI Dashboards Built</div></div>
+<div><div class="stat-val">3</div><div class="stat-label">Industries Served</div></div>
+<div><div class="stat-val">1M+</div><div class="stat-label">Records Processed</div></div>
+</div>
+<div class="hero-contact">
+<span class="contact-item">+91 8130601733</span>
+<span class="contact-item" style="color:rgba(255,255,255,0.3)">|</span>
+<span class="contact-item">kumar.abhay1994@gmail.com</span>
+<span class="contact-item" style="color:rgba(255,255,255,0.3)">|</span>
+<span class="contact-item">linkedin.com/in/abhay-kumar1994</span>
+<span class="contact-item" style="color:rgba(255,255,255,0.3)">|</span>
+<span class="contact-item">Dwarka, Delhi — 110059</span>
+</div>
+</div>
+</div>
+<section id="experience">
+<div class="section-inner">
+<div class="section-label">Work History</div>
+<div class="section-title">Professional <span>Experience</span></div>
+<div class="exp-item fade-in">
+<div>
+<div class="exp-company">Nippon Data Systems Ltd.</div>
+<div class="exp-dates">June 2025 – Present</div>
+<div class="exp-loc">Noida, UP</div>
+<div class="exp-current">Current Role</div>
+</div>
+<div>
+<div class="exp-title">Data Analyst / Statistical Analyst</div>
+<ul class="exp-bullets">
+<li>Coordinated with nodal officers across 10+ government schemes to standardize data collection and reporting workflows at the Ministry of Culture level.</li>
+<li>Developed and maintained 10+ KPI dashboards in Power BI for real-time scheme performance monitoring — enabling decisions for 20+ NITI Aayog stakeholders.</li>
+<li>Integrated APIs across Ministry of Culture platforms including Event Matrix — automating data flow and reducing manual intervention significantly.</li>
+<li>Managed DGQI (Data Governance Quality Index) compliance under NITI Aayog — conducted audits, implemented validation frameworks, improved the Ministry's DGQI score.</li>
+<li>Wrote and optimized SQL queries on SQL Server for large citizen and beneficiary datasets, supporting ETL pipelines and scheme outcome reporting.</li>
+<li>Prepared BRDs and User Guides for 3+ internal tools leveraging AI-driven tools (GPT-4.5, Gemini, Claude Opus, Codex, Perplexity) to accelerate documentation quality.</li>
+</ul>
+</div>
+</div>
+<div class="exp-item fade-in">
+<div>
+<div class="exp-company">Quess Corp Ltd.</div>
+<div class="exp-dates">Feb 2025 – June 2025</div>
+<div class="exp-loc">Gurgaon, Haryana</div>
+</div>
+<div>
+<div class="exp-title">Technology Consultant &amp; Data Analyst</div>
+<ul class="exp-bullets">
+<li>Served as Technology Consultant and Data Analyst for WWF India's in-house field operations application — owned data operations for 500+ field records.</li>
+<li>Designed and deployed Apache Superset dashboards from weekly data feeds; supported GIS division with spatial data visualization for conservation field activities.</li>
+<li>Monitored AWS cloud billing (Lambda + EC2), identified over-provisioned resources, and generated visual cost reports — contributing to measurable monthly savings.</li>
+<li>Integrated OKR plugin in JIRA; conducted structured UAT sessions (30+ test cases) validating system functionality before each release go-live.</li>
+<li>Participated actively in Agile sprint cycles — planning, stand-ups, retrospectives — ensuring iterative, on-time delivery throughout the engagement.</li>
+</ul>
+</div>
+</div>
+<div class="exp-item fade-in">
+<div>
+<div class="exp-company">GlobalLogic Technologies Pvt. Ltd.</div>
+<div class="exp-dates">Nov 2018 – Mar 2024</div>
+<div class="exp-loc">Gurgaon, Haryana</div>
+</div>
+<div>
+<div class="exp-title">Senior Analyst</div>
+<ul class="exp-bullets">
+<li>Managed end-to-end data operations across multiple client accounts — cleaning, transforming, and structuring datasets of 1M+ records ensuring accuracy and completeness.</li>
+<li>Wrote and optimized complex SQL queries; built and maintained ETL pipelines, data catalogs, and lineage documentation for auditable data flows.</li>
+<li>Built automated BI reporting solutions reducing recurring manual reporting effort by ~35%, freeing analyst bandwidth for higher-value work.</li>
+<li>Mentored junior analysts on SQL and data quality standards; led 8-member team to on-time delivery — recognized with the Alpha Player Award, GlobalLogic RNR 2023.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="dashboards" style="background: var(--gray-100);">
+<div class="section-inner">
+<div class="section-label">Live Proof of Work</div>
+<div class="section-title">Dashboard <span>Showcase</span></div>
+<div class="dash-card fade-in">
+<div class="dash-info">
+<div class="dash-org">Quess Corp — WWF India</div>
+<div class="dash-title">AWS Cost Analysis Dashboard — April 2025</div>
+<div class="dash-desc">Real billing dashboard built to monitor and optimize AWS cloud expenditure for WWF India. Tracked EC2 ($281), ECS ($168), Lambda ($128), and EBS costs across Asia-Pacific and US regions — identified over-provisioned resources and generated actionable cost-saving recommendations.</div>
+<div class="tag-row">
+<span class="tag">AWS Billing</span><span class="tag">Cost Optimization</span><span class="tag">EC2</span><span class="tag">Lambda</span><span class="tag">Data Visualization</span>
+</div>
+</div>
+<div class="dash-img-wrap">
+<img alt="AWS Cost Analysis Dashboard" class="dash-img" src="AWS cost.png"/>
+</div>
+</div>
+<div class="dash-card fade-in">
+<div class="dash-info">
+<div class="dash-org">Personal Project</div>
+<div class="dash-title">LocalPulse — WhatsApp AI Assistant System Architecture</div>
+<div class="dash-desc">Designed and documented the full system architecture for LocalPulse — a WhatsApp-based AI assistant built with Node.js, React, and Claude AI. Architecture covers frontend components, backend webhook routing, real-time data APIs (OpenWeatherMap, TomTom, News API), and WhatsApp infra via Meta Cloud API.</div>
+<div class="tag-row">
+<span class="tag">System Architecture</span><span class="tag">Claude AI</span><span class="tag">Node.js</span><span class="tag">WhatsApp API</span><span class="tag">API Integration</span>
+</div>
+</div>
+<div class="dash-img-wrap">
+<img alt="LocalPulse System Architecture" class="dash-img" src="LocalPulse system architecture flowchart.png"/>
+</div>
+</div>
+<div class="dash-card fade-in">
+<div class="dash-info">
+<div class="dash-org">Quess Corp — WWF India</div>
+<div class="dash-title">Forest Incidents &amp; IRS Dashboard Analysis (2018–2024)</div>
+<div class="dash-desc">Comprehensive wildlife conflict reporting dashboard covering 6,568 total incidents and 2,525 IRS cases across TAL, CIL, BHL, and WGNL landscapes. Visualized conflict species (Elephant, Snake, Hyena), livestock impact, location breakdowns, and IRS payment trends from 2017–2024 to support WWF India conservation decisions.</div>
+<div class="tag-row">
+<span class="tag">Apache Superset</span><span class="tag">WWF India</span><span class="tag">Wildlife Analytics</span><span class="tag">GIS</span><span class="tag">Conservation Data</span>
+</div>
+</div>
+<div class="dash-img-wrap">
+<img alt="Forest Incidents Dashboard" class="dash-img" src="Forest Incidents and IRS Dashboard Analysis.png"/>
+</div>
+</div>
+<div class="dash-card fade-in">
+<div class="dash-info">
+<div class="dash-org">Nippon Data Systems — Ministry of Culture</div>
+<div class="dash-title">DGQI Scheme Dashboard</div>
+<div class="dash-desc">Developed a KPI-based dashboard to monitor beneficiary data, fund allocation, and scheme performance under DGQI compliance. Enabled data-driven decision making for ministry stakeholders with clear visualization of financial assistance metrics.</div>
+<div class="tag-row">
+<span class="tag">Power BI</span><span class="tag">DGQI</span><span class="tag">KPI Dashboard</span><span class="tag">Government Data</span>
+</div>
+</div>
+<div class="dash-img-wrap">
+<img class="dash-img" src="Scheme dashboards .jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="section-inner">
+<div class="section-label">Work Showcase</div>
+<div class="section-title">Key <span>Projects</span></div>
+<div class="projects-grid">
+<div class="proj-card fade-in">
+<div class="proj-org">Nippon Data Systems</div>
+<div class="proj-name">Event Matrix — Ministry Event Tracking</div>
+<div class="proj-desc">Built a unified Power BI dashboard using APIs to consolidate and monitor events across Ministry of Culture departments — replacing fragmented manual reporting with a single real-time source of truth.</div>
+<div class="tag-row"><span class="tag">Power BI</span><span class="tag">API</span><span class="tag">SQL</span><span class="tag">Ministry of Culture</span></div>
+</div>
+<div class="proj-card fade-in">
+<div class="proj-org">Nippon Data Systems</div>
+<div class="proj-name">DGQI Compliance &amp; Beneficiary Reporting</div>
+<div class="proj-desc">Automated beneficiary data ingestion via APIs; implemented validation frameworks and metadata standards that improved the Ministry's DGQI score and audit compliance across all reporting cycles.</div>
+<div class="tag-row"><span class="tag">DGQI</span><span class="tag">NITI Aayog</span><span class="tag">API Integration</span><span class="tag">Data Governance</span></div>
+</div>
+<div class="proj-card fade-in">
+<div class="proj-org">Quess Corp — WWF India</div>
+<div class="proj-name">Wildlife Field Operations App + GIS Support</div>
+<div class="proj-desc">Data Analyst for WWF India's in-house app managing 500+ field records. Built Apache Superset dashboards. Supported GIS division with spatial data visualization to map conservation activities and geographic impact.</div>
+<div class="tag-row"><span class="tag">Apache Superset</span><span class="tag">GIS</span><span class="tag">AWS</span><span class="tag">WWF India</span></div>
+</div>
+<div class="proj-card fade-in">
+<div class="proj-org">GlobalLogic Technologies</div>
+<div class="proj-name">Knowledge Graph &amp; Crowd Compute Analytics</div>
+<div class="proj-desc">Processed large-scale user interaction datasets for a knowledge graph platform using SQL. Conducted merchant product data analysis — running SQL aggregations and batch processing for product performance reporting.</div>
+<div class="tag-row"><span class="tag">SQL</span><span class="tag">Data Modelling</span><span class="tag">ETL</span><span class="tag">BI Reporting</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="skills-section" id="skills">
+<div class="section-inner">
+<div class="section-label">Capabilities</div>
+<div class="section-title">Technical <span style="color:var(--accent)">Skills</span></div>
+<div class="skills-grid">
+<div class="skill-group fade-in">
+<div class="skill-group-title">Analytics &amp; Visualization</div>
+<div class="skill-list"><span class="skill-pill">Power BI</span><span class="skill-pill">Apache Superset</span><span class="skill-pill">MS Excel</span><span class="skill-pill">KPI Dashboards</span><span class="skill-pill">Pivot Tables</span></div>
+</div>
+<div class="skill-group fade-in">
+<div class="skill-group-title">Data &amp; Programming</div>
+<div class="skill-list"><span class="skill-pill">SQL</span><span class="skill-pill">SQL Server</span><span class="skill-pill">ETL Design</span><span class="skill-pill">Data Quality</span><span class="skill-pill">API Integration</span><span class="skill-pill">C</span><span class="skill-pill">HTML</span></div>
+</div>
+<div class="skill-group fade-in">
+<div class="skill-group-title">AI Tools</div>
+<div class="skill-list"><span class="skill-pill">GPT-4.5</span><span class="skill-pill">Gemini</span><span class="skill-pill">Claude Opus</span><span class="skill-pill">Codex</span><span class="skill-pill">Perplexity</span></div>
+</div>
+<div class="skill-group fade-in">
+<div class="skill-group-title">Governance &amp; Compliance</div>
+<div class="skill-list"><span class="skill-pill">DGQI Compliance</span><span class="skill-pill">NITI Aayog</span><span class="skill-pill">BRD Writing</span><span class="skill-pill">Metadata Frameworks</span><span class="skill-pill">Data Lineage</span></div>
+</div>
+<div class="skill-group fade-in">
+<div class="skill-group-title">Cloud &amp; Infrastructure</div>
+<div class="skill-list"><span class="skill-pill">AWS Lambda</span><span class="skill-pill">AWS EC2</span><span class="skill-pill">Cost Optimization</span><span class="skill-pill">Billing Analysis</span></div>
+</div>
+<div class="skill-group fade-in">
+<div class="skill-group-title">Project &amp; Delivery</div>
+<div class="skill-list"><span class="skill-pill">JIRA</span><span class="skill-pill">OKR Plugin</span><span class="skill-pill">Agile/Scrum</span><span class="skill-pill">UAT</span><span class="skill-pill">Stakeholder Mgmt</span><span class="skill-pill">GIS Support</span></div>
+</div>
+</div>
+</div>
+</section>
+<section id="certifications">
+<div class="section-inner">
+<div class="section-label">Credentials</div>
+<div class="section-title">Certifications &amp; <span>Education</span></div>
+<div class="certs-grid">
+<div class="cert-card fade-in">
+<div class="cert-issuer">The Forage</div>
+<div class="cert-name">TATA Data Visualization Certification</div>
+<div class="cert-date">Aug 2024</div>
+</div>
+<div class="cert-card fade-in">
+<div class="cert-issuer">The Forage</div>
+<div class="cert-name">Accenture Data Analytics &amp; Visualization</div>
+<div class="cert-date">Jul 2024</div>
+</div>
+<div class="cert-card fade-in">
+<div class="cert-issuer">Coursera</div>
+<div class="cert-name">Business Analysis &amp; Process Management</div>
+<div class="cert-date">Mar 2026</div>
+</div>
+<div class="cert-card fade-in" style="grid-column: span 2; background: #EBF3FB; border-color: #B5D4F4;">
+<div class="cert-issuer" style="color:#185FA5;">GGSIPU — IP University</div>
+<div class="cert-name" style="font-size:15px;">Master of Computer Applications (MCA)</div>
+<div class="cert-date">Aug 2015 – July 2018 · Dwarka, New Delhi</div>
+</div>
+<div class="cert-card fade-in" style="background:#F1EFE8; border-color:#D3D1C7;">
+<div class="cert-issuer" style="color:#5F5E5A;">GGSIPU — IP University</div>
+<div class="cert-name">Bachelor of Computer Applications (BCA)</div>
+<div class="cert-date">Aug 2011 – July 2014 · Dwarka, New Delhi</div>
+</div>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="section-inner" style="text-align:center;">
+<div class="section-label">Get In Touch</div>
+<div class="section-title" style="color:var(--white); margin-bottom:12px;">Let's <span style="color:var(--accent)">Connect</span></div>
+<p class="contact-sub">Open to Data Analyst, Business Analyst, and Data Operations roles.</p>
+<div class="contact-grid">
+<div class="contact-card"><div class="contact-type">Phone</div><div class="contact-val">+91 8130601733</div></div>
+<div class="contact-card"><div class="contact-type">Email</div><div class="contact-val">kumar.abhay1994@gmail.com</div></div>
+<div class="contact-card"><div class="contact-type">LinkedIn</div><div class="contact-val">abhay-kumar1994</div></div>
+<div class="contact-card"><div class="contact-type">Location</div><div class="contact-val">Dwarka, Delhi — 110059</div></div>
+</div>
+</div>
+</section>
+<footer>© 2025 Abhay Kumar · Data &amp; Business Analyst · Delhi, India</footer>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
