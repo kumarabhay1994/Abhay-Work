@@ -1,4 +1,6 @@
-# This is a basic workflow that is manually triggered
+git add .
+git commit -m "Initial setup for AWS cost dashboard #7"
+git push origin main# This is a basic workflow that is manually triggered
 
 name: Manual workflow
 
